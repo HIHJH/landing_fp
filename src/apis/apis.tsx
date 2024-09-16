@@ -5,7 +5,7 @@ export const flowithAxios = axios.create({
   baseURL,
 });
 
-export const postEmailApi = async (email: string) => {
+export const postEmailApi = async () => {
   //   try {
   //     const API = `/user/landing`;
   //     const response = await flowithAxios.post(API, { email: email });

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LogoIcon from "@assets/images/Logo.svg";
+import LogoIcon from "@assets/images/logo.svg";
 import { colors } from "@/styles/colors";
 import { useNavigate } from "react-router-dom";
 import { media } from "@/styles/media";
