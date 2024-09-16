@@ -3,7 +3,7 @@ import { colors } from "@/styles/colors";
 import { useEffect, useState } from "react";
 import { postInfoApi } from "@/apis/apis";
 import { StyledToastContainer } from "@/styles/toastStyle";
-import { Flip, Slide, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { media } from "@/styles/media";
 
 const Register = () => {
