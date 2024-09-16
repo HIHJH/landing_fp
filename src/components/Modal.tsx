@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import Delete from "@assets/images/Delete.svg";
-import { Flip, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { SearchModalBox, SearchModalContent } from "@/styles/ModalStyle";
 import { media } from "@/styles/media";
