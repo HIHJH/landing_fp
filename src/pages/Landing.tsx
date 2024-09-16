@@ -1,3 +1,4 @@
+import Floating from "@/components/Floating";
 import Header from "@/components/Header";
 import Section1 from "@/components/Section1";
 import Section2 from "@/components/Section2";
@@ -17,6 +18,7 @@ const Landing = () => {
       <Section4 />
       <Section5 />
       <Section6 />
+      <Floating />
     </Container>
   );
 };
