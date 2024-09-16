@@ -38,6 +38,10 @@ const FloatingBtn = styled.div`
   `}
 `;
 const Image = styled.img`
+  width: 4rem;
+  height: 4rem;
+  ${media.phone`
   width: 1.5rem;
   height: 1.5rem;
+  `}
 `;
