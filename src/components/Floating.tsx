@@ -28,6 +28,7 @@ const FloatingBtn = styled.div`
   border-radius: 7rem;
   background-color: ${colors.gray900};
   z-index: 999;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   ${media.phone`
   bottom: 1.5rem;
