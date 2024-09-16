@@ -198,7 +198,7 @@ const TextBoxR = styled.div`
   ${media.phone`
   top: 1rem;
   right: 1.25rem;
-    width: 9.375rem;
+    width: 10rem;
     padding: 0.75rem 1.125rem;
     font-size: 0.75rem;
   `}
