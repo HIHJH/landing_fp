@@ -254,5 +254,6 @@ padding: 0.75rem 1.25rem;
 gap: 0.5rem;
 flex-shrink: 0;
 font-size: 0.875rem;
+margin-top: 20rem;
   `}
 `;
