@@ -2,17 +2,32 @@ import styled from "styled-components";
 import { colors } from "@/styles/colors";
 import { useEffect, useState } from "react";
 import { postInfoApi } from "@/apis/apis";
-import { StyledToastContainer } from "@/styles/toastStyle";
-import { toast } from "react-toastify";
 import { media } from "@/styles/media";
+import Modal from "./Modal";
+import { Flip, toast } from "react-toastify";
+import { StyledToastContainer } from "@/styles/toastStyle";
 
 const Register = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
+  // 모달
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const clickModal = () => setShowModal(!showModal);
+
   const [phoneNum, setPhoneNum] = useState<string>("");
   const [place, setPlace] = useState<string>("");
   const handleChangePhoneNum = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNum(e.target.value);
+    let value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
+
+    if (value.length <= 3) {
+      setPhoneNum(value);
+    } else if (value.length <= 7) {
+      setPhoneNum(`${value.slice(0, 3)}-${value.slice(3)}`);
+    } else if (value.length <= 11) {
+      setPhoneNum(
+        `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(7)}`
+      );
+    }
   };
   const handleChangePlace = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPlace(e.target.value);
@@ -23,7 +38,7 @@ const Register = () => {
       await postInfoApi(phoneNum, hangout).then(() => {
         setPhoneNum("");
         setPlace("");
-        toast("사전 알림 신청 완료!");
+        setShowModal(true);
       });
     } catch {
       toast("사전 알림 신청 실패!");
@@ -49,6 +64,7 @@ const Register = () => {
           placeholder="XXX - XXXX - XXXX"
           value={phoneNum}
           onChange={handleChangePhoneNum}
+          maxLength={13}
         />
       </InputBox>
       <InputBox>
@@ -59,6 +75,7 @@ const Register = () => {
           placeholder={`단골로 지정하고 싶은 식당을 적어주세요.\n체인점이라면, 정확한 상호명과 지점명을 명시해주세요.`}
           value={place}
           onChange={handleChangePlace}
+          maxLength={600}
         />
       </InputBox>
       <Button
@@ -68,6 +85,7 @@ const Register = () => {
       >
         입력 완료
       </Button>
+      {showModal && <Modal clickModal={clickModal} />}
       <StyledToastContainer
         position="bottom-center"
         autoClose={1000}
@@ -77,6 +95,7 @@ const Register = () => {
         closeButton={false}
         rtl={false}
         theme="light"
+        transition={Flip}
       />
     </Container>
   );
