@@ -20,7 +20,7 @@ const Register = () => {
 
   const postPhoneNum = async (phoneNum: string) => {
     try {
-      await postEmailApi(phoneNum).then(() => {
+      await postEmailApi().then(() => {
         setPhoneNum("");
         console.log(phoneNum);
         //toast('사전 알림 신청 완료!')
