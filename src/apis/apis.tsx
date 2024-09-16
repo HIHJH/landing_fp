@@ -5,12 +5,15 @@ export const flowithAxios = axios.create({
   baseURL,
 });
 
-export const postEmailApi = async () => {
-  //   try {
-  //     const API = `/user/landing`;
-  //     const response = await flowithAxios.post(API, { email: email });
-  //     return console.log(response + "전송 완료");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
+export const postInfoApi = async (phone: string, hangout: string) => {
+  try {
+    const API = `/registration`;
+    const response = await flowithAxios.post(API, {
+      phone_number: phone,
+      hangout: hangout,
+    });
+    return console.log(response + "전송 완료");
+  } catch (error) {
+    console.error(error);
+  }
 };

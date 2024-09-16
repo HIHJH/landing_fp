@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { colors } from "@/styles/colors";
 import { useEffect, useState } from "react";
-import { postEmailApi } from "@/apis/apis";
+import { postInfoApi } from "@/apis/apis";
 import { StyledToastContainer } from "@/styles/toastStyle";
-import { Flip } from "react-toastify";
+import { Flip, Slide, toast } from "react-toastify";
 import { media } from "@/styles/media";
 
 const Register = () => {
@@ -18,16 +18,15 @@ const Register = () => {
     setPlace(e.target.value);
   };
 
-  const postPhoneNum = async (phoneNum: string) => {
+  const postPhoneNum = async (phoneNum: string, hangout: string) => {
     try {
-      await postEmailApi().then(() => {
+      await postInfoApi(phoneNum, hangout).then(() => {
         setPhoneNum("");
-        console.log(phoneNum);
-        //toast('사전 알림 신청 완료!')
+        setPlace("");
+        toast("사전 알림 신청 완료!");
       });
     } catch {
-      console.log("실패");
-      //toast('사전 알림 신청 실패!')
+      toast("사전 알림 신청 실패!");
     }
   };
 
@@ -65,7 +64,7 @@ const Register = () => {
       <Button
         disabled={phoneNum == ""}
         active={isActive ? 1 : 0}
-        onClick={() => postPhoneNum(phoneNum)}
+        onClick={() => postPhoneNum(phoneNum, place)}
       >
         입력 완료
       </Button>
@@ -78,7 +77,6 @@ const Register = () => {
         closeButton={false}
         rtl={false}
         theme="light"
-        transition={Flip}
       />
     </Container>
   );
@@ -177,6 +175,7 @@ const InputPhone = styled.input`
   border-radius: 0.5rem;
   border: none;
   outline: none;
+  font-family: Pretendard;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem;
