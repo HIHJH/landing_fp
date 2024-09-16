@@ -29,7 +29,7 @@ const Section2 = () => {
         initial="offscreen"
         whileInView="onscreen"
         variants={Variants}
-      >{`내가 자주 가는 카페, 음식점만 등록하면\n나만을 위한 할인혜택이?`}</Title>
+      >{`내가 자주 가는 카페, 음식점만 등록하면\n나만을 위한 할인 혜택이?`}</Title>
       <SubTitle
         style={{ marginBottom: "2.75rem" }}
         initial="offscreen"
@@ -40,7 +40,7 @@ const Section2 = () => {
         initial="offscreen"
         whileInView="onscreen"
         variants={Variants}
-      >{`단골가게를 서비스에 등록만하면,\n내가 자주가는 가게에서 할인가로 만나볼 수 있어요!`}</SubTitle>
+      >{`단골가게를 서비스에 등록만 하면,\n내가 자주가는 가게에서 할인가로 만나볼 수 있어요!`}</SubTitle>
     </Container>
   );
 };

@@ -21,7 +21,7 @@ const Section3 = () => {
   };
   return (
     <Container>
-      <Title>{`단골로 등록만하면,\n모두 다 할인가로 즐길 수 있어요!`}</Title>
+      <Title>{`단골로 등록만 하면,\n모두 다 할인가로 즐길 수 있어요!`}</Title>
       <Image
         visible="desktop"
         initial="default"
