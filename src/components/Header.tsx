@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import LogoIcon from "@assets/images/logo.svg";
-import { colors } from "@/styles/colors";
 import { useNavigate } from "react-router-dom";
 import { media } from "@/styles/media";
 
@@ -11,9 +10,6 @@ const Header = () => {
     <Container>
       <TopBar>
         <Logo onClick={() => navigate("/")} src={LogoIcon} />
-        <PreRegisterationBtn onClick={() => navigate("/pre-registration")}>
-          사전신청하러가기
-        </PreRegisterationBtn>
       </TopBar>
     </Container>
   );
@@ -40,6 +36,7 @@ const TopBar = styled.div`
 
   ${media.phone`
   padding: 0.5rem 1.25rem;
+  justify-content: center;
   `}
 `;
 const Logo = styled.img`
@@ -50,24 +47,5 @@ const Logo = styled.img`
   ${media.phone`
   width: 1.75rem;
 height: 1.75rem;
-  `}
-`;
-const PreRegisterationBtn = styled.div`
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  background: ${colors.gray900};
-  color: ${colors.white};
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-
-  ${media.phone`
-  padding: 0.75rem 0.625rem;
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
   `}
 `;

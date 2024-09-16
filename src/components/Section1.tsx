@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import BackgroundImage from "@assets/images/Section1.png";
 import BackgroundImage_phone from "@assets/images/Section1-phone.png";
-import ArrowIcon from "@assets/images/arrow_left.svg";
 import { motion } from "framer-motion";
 import { colors } from "@/styles/colors";
-import { useNavigate } from "react-router-dom";
 import { media } from "@/styles/media";
 import { BackImageProps } from "./types";
 
 const Section1 = () => {
-  const navigate = useNavigate();
-
   const Variants = {
     offscreen: {
       y: +50,
@@ -57,23 +53,6 @@ const Section1 = () => {
         <BackImage visible={"phone"} src={BackgroundImage_phone} />
         <TextBoxL>{`나 공강때 여기만 가는데\n단골로 인정받고싶어`}</TextBoxL>
         <TextBoxR>{`매일 가는 가게라서\n할인 좀 받고싶은데 ... 안되려나`}</TextBoxR>
-        <ButtonBox>
-          <SubText>지금 신청하면, 평생 무료로 할인받아요</SubText>
-          <Button
-            initial="default"
-            whileHover="scaleUp"
-            variants={Variants}
-            onClick={() => navigate("/pre-registration")}
-          >
-            평생 무료로 단골 혜택 받기
-          </Button>
-        </ButtonBox>
-        <ButtomBox>
-          <ScrollBox variants={Variants} animate="animate">
-            <SubScrollText>SCROLL</SubScrollText>
-            <ScrollIcon src={ArrowIcon} />
-          </ScrollBox>
-        </ButtomBox>
       </ImageBox>
     </Container>
   );
@@ -91,7 +70,7 @@ const Container = styled(motion.div)<any>`
 
   ${media.phone`
     margin-top: 3.25rem;
-    height: 50.75rem;
+    height: 45rem;
   `}
 `;
 const ImageBox = styled.div`
@@ -223,96 +202,4 @@ const TextBoxR = styled.div`
     padding: 0.75rem 1.125rem;
     font-size: 0.75rem;
   `}
-`;
-
-const ButtonBox = styled.div`
-  position: absolute;
-  top: 32.44rem;
-  display: flex;
-  width: 120rem;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.3125rem;
-  z-index: 2;
-
-  ${media.phone`
-  bottom: 9rem;
-  width: 100%;
-  justify-content: center;
-gap: 0.5rem;
-  `}
-`;
-const SubText = styled.div`
-  text-align: center;
-  font-size: 1.625rem;
-  font-weight: 600;
-  line-height: 150%;
-  letter-spacing: -0.01438rem;
-
-  ${media.phone`
-  font-size: 0.875rem;
-  `}
-`;
-const Button = styled(motion.div)<any>`
-  display: flex;
-  width: 39rem;
-  padding: 1.25rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 1rem;
-  background: ${colors.gray900};
-  color: ${colors.white};
-  text-align: center;
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 150%;
-  letter-spacing: -0.01438rem;
-  cursor: pointer;
-
-  ${media.phone`
-  width: 16.4375rem;
-height: 1.5rem;
-padding: 0.75rem 1.25rem;
-border-radius: 0.5rem;
-font-size: 0.875rem;
-  `}
-`;
-const ButtomBox = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 120rem;
-  padding: 2.125rem 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.8) 100%
-  );
-
-  ${media.phone`
-  width: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.80) 100%);
-backdrop-filter: blur(2px);
-  `}
-`;
-const SubScrollText = styled.div`
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 100%;
-
-  ${media.phone`
-  font-size: 0.75rem;
-  `}
-`;
-const ScrollBox = styled(motion.div)<any>`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.5rem;
-`;
-const ScrollIcon = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
 `;
