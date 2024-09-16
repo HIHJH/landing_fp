@@ -46,13 +46,13 @@ const Section1 = () => {
         <Title>
           당신만을 위한 <Bold>푸드패스</Bold>
         </Title>
-        <SubTitle>저 여기 단골인데.. 할인좀 해주세요!</SubTitle>
+        <SubTitle>저 여기 단골인데.. 할인 좀 해주세요!</SubTitle>
       </TitleBox>
       <ImageBox>
         <BackImage visible={"desktop"} src={BackgroundImage} />
         <BackImage visible={"phone"} src={BackgroundImage_phone} />
-        <TextBoxL>{`나 공강때 여기만 가는데\n단골로 인정받고싶어`}</TextBoxL>
-        <TextBoxR>{`매일 가는 가게라서\n할인 좀 받고싶은데 ... 안되려나`}</TextBoxR>
+        <TextBoxL>{`나 공강 때 여기만 가는데\n단골로 인정받고 싶어`}</TextBoxL>
+        <TextBoxR>{`매일 가는 가게라서\n할인 좀 받고 싶은데 ... 안되려나?`}</TextBoxR>
       </ImageBox>
     </Container>
   );
