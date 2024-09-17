@@ -24,15 +24,15 @@ export const SearchModalContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   padding: 3.19rem 6.25rem;
-  width: 20rem;
-  height: 10rem;
+  width: 35rem;
+  height: 20rem;
   border-radius: 1.25rem;
   background: #fff;
   z-index: 5;
 
   ${media.phone`
   width: 70vw;
-    height: auto;
+    height: 8rem;
     padding: 2rem;
   `}
 `;
