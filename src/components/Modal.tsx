@@ -30,7 +30,8 @@ const Modal = (props: ModalProps) => {
         >
           <Icon src={Delete} onClick={clickModal} />
           <ModalContent>
-            <Content>신청이 완료되었습니다!</Content>
+            <Content>푸드패스 신청이 완료되었습니다!</Content>
+            <MiniText>{`정식 오픈 직후, 작성해주신 연락처로\n단골혜택 안내를 가장 먼저 받아보실 수 있습니다.`}</MiniText>
           </ModalContent>
         </SearchModalContent>
       </SearchModalBox>
@@ -52,8 +53,8 @@ const ModalContent = styled.div`
 `;
 const Content = styled.div`
   color: #000;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 600;
   line-height: 4.21875rem;
 
   ${media.phone`
@@ -72,4 +73,20 @@ const Icon = styled.img`
   right: 1rem;
   width: 1rem;
   height: 1rem;`}
+`;
+const MiniText = styled.div`
+  color: #7b8696;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  letter-spacing: -0.01563rem;
+  text-align: center;
+  white-space: pre-wrap;
+
+  ${media.phone`
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: -0.01563rem;
+  `}
 `;
