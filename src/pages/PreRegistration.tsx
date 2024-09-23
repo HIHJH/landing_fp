@@ -17,9 +17,13 @@ export default PreRegistration;
 
 const Container = styled.div`
   width: 120rem;
+  height: 100vh;
   overflow: hidden;
   background: ${colors.white};
   ${media.phone`
     width:100%;
+    height: auto;
+  `}
+  ${media.desktop`
   `}
 `;
