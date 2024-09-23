@@ -29,9 +29,9 @@ const Register = () => {
       );
     }
   };
-  const handleChangePlace = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setPlace(e.target.value);
-  };
+  // const handleChangePlace = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  //   setPlace(e.target.value);
+  // };
 
   const postPhoneNum = async (phoneNum: string, hangout: string) => {
     try {
@@ -67,7 +67,7 @@ const Register = () => {
           maxLength={13}
         />
       </InputBox>
-      <InputBox>
+      {/* <InputBox>
         <TextBox>
           <InputTitle>단골로 지정할 식당</InputTitle>
         </TextBox>
@@ -77,7 +77,7 @@ const Register = () => {
           onChange={handleChangePlace}
           maxLength={600}
         />
-      </InputBox>
+      </InputBox> */}
       <Button
         disabled={phoneNum == ""}
         active={isActive ? 1 : 0}
@@ -85,6 +85,7 @@ const Register = () => {
       >
         입력 완료
       </Button>
+      <WhiteSpace />
       {showModal && <Modal clickModal={clickModal} />}
       <StyledToastContainer
         position="bottom-center"
@@ -214,40 +215,40 @@ const InputPhone = styled.input`
     height: 5rem;
   `}
 `;
-const InputPlace = styled.textarea`
-  width: 97%;
-  min-height: 21.9375rem;
-  resize: none;
-  font-family: Pretendard;
-  display: flex;
-  padding: 1.324rem;
-  align-items: flex-start;
-  flex: 1 0 0;
-  justify-content: center;
-  border-radius: 0.5rem;
-  border: none;
-  outline: none;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 2.0625rem;
-  letter-spacing: -0.02363rem;
-  background: #f7f7f9;
-  &::placeholder {
-    color: ${colors.gray300};
-  }
-  &:focus {
-    outline: none;
-    border: 1px solid #dedede;
-    background: #ededed;
-  }
-  ${media.phone`
-  font-size: 0.875rem;
-line-height: 1.375rem;
-width: 86.5%;
-min-height: 13rem;
-padding: 0.875rem;
-  `}
-`;
+// const InputPlace = styled.textarea`
+//   width: 97%;
+//   min-height: 21.9375rem;
+//   resize: none;
+//   font-family: Pretendard;
+//   display: flex;
+//   padding: 1.324rem;
+//   align-items: flex-start;
+//   flex: 1 0 0;
+//   justify-content: center;
+//   border-radius: 0.5rem;
+//   border: none;
+//   outline: none;
+//   font-size: 1.25rem;
+//   font-weight: 500;
+//   line-height: 2.0625rem;
+//   letter-spacing: -0.02363rem;
+//   background: #f7f7f9;
+//   &::placeholder {
+//     color: ${colors.gray300};
+//   }
+//   &:focus {
+//     outline: none;
+//     border: 1px solid #dedede;
+//     background: #ededed;
+//   }
+//   ${media.phone`
+//   font-size: 0.875rem;
+// line-height: 1.375rem;
+// width: 86.5%;
+// min-height: 13rem;
+// padding: 0.875rem;
+//   `}
+// `;
 const Button = styled.button<{ active: number }>`
   display: flex;
   padding: 1.25rem;
@@ -273,5 +274,11 @@ gap: 0.5rem;
 flex-shrink: 0;
 font-size: 0.875rem;
 margin-top: 20rem;
+  `}
+`;
+const WhiteSpace = styled.div`
+  height: 10rem;
+  ${media.phone`
+    height: 0;
   `}
 `;
